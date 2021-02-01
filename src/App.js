@@ -2,6 +2,7 @@ import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { showArray, UpdateArray } from "./actinos/array-operations";
 import Slider from "./components/slider";
+import SelectionSort from "./sorting/selection-sort/selection";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +26,8 @@ function App() {
       <Slider />
       <br />
       <input type="button" value="Update Array" onClick={update} />
+      <br />
+      <SelectionSort />
     </div>
   );
 }

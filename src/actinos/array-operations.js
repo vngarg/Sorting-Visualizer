@@ -3,17 +3,21 @@ import { Constants } from "./constants";
 export const showArray = () => {
     return dispatch => {
         dispatch({
-            type: Constants.SHOW_ARRAY
+            type: Constants.GET_ARRAY
         })
     }
 }
 
 export const UpdateArray = (size) => {
+    // generating a random array of the new size. Values of the array are from 0 to (size*50)
+    var array = Array.from({length: size}, () => Math.floor(Math.random() * size*50)); 
+
     return dispatch => {
         dispatch({
             type: Constants.UPDATE_ARRAY,
             payload: {
-                size
+                size,
+                array
             }
         })
     }

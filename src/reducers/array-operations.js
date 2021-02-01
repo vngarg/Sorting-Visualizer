@@ -7,7 +7,7 @@ const initState = {
 
 export default (state = initState, action) => {
     switch(action.type) {
-        case Constants.SHOW_ARRAY: 
+        case Constants.GET_ARRAY: 
             state = {
                 ...initState
             }
@@ -16,6 +16,7 @@ export default (state = initState, action) => {
             state = {
                 ...state, 
                 size: action.payload.size,
+                array: action.payload.array
             }
             break;
         default: 
