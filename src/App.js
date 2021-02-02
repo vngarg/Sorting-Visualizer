@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { showArray, UpdateArray } from "./actinos/array-operations";
 import Slider from "./components/slider";
 import SelectionSort from "./sorting/selection-sort/selection";
+import InsertionSort from './sorting/insertion-sort/insertion';
+import Bubble from "./sorting/bubble-sort/Bubble";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,6 +30,10 @@ function App() {
       <input type="button" value="Update Array" onClick={update} />
       <br />
       <SelectionSort />
+      <br />
+      <InsertionSort />
+      <br />
+      <Bubble />
     </div>
   );
 }
