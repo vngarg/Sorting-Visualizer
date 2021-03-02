@@ -10,7 +10,7 @@ export const showArray = () => {
 
 export const UpdateArray = (size) => {
     // generating a random array of the new size. Values of the array are from 0 to (size*50)
-    var array = Array.from({length: size}, () => Math.floor(Math.random() * size*50)); 
+    var array = Array.from({length: size}, () => (Math.floor(Math.random() * 398)) + 1); 
 
     return dispatch => {
         dispatch({

@@ -10,3 +10,17 @@
     color: var(--whiteShade);
     text-shadow: 2px 2px 4px;
 }
+
+.mainDiv {
+    height: 400px;
+}
+
+.pillar {
+    width: 16px;
+    background-color: white;
+    color: black;
+    margin: 16px;
+    border-radius: 16px;
+    display: inline-block !important;
+    vertical-align: middle;
+}

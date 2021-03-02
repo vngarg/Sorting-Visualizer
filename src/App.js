@@ -1,15 +1,39 @@
 import "./App.css";
+import { useEffect } from "react";
 import Slider from "./components/slider";
 import SelectionSort from "./sorting/selection-sort/selection";
 import InsertionSort from "./sorting/insertion-sort/insertion";
 import Bubble from "./sorting/bubble-sort/Bubble";
-import './index.css';
+import "./index.css";
+import { useSelector } from "react-redux";
 
 function App() {
+  var size = useSelector((state) => state.arr.size);
+  var array = useSelector((state) => state.arr.array);
+
+  const CreatePillars = () => {
+    var mainDiv = document.querySelector(".mainDiv");
+
+    // Removing the previous array elements.
+    while (mainDiv.firstChild) mainDiv.firstChild.remove();
+
+    // adding array elements with the current size.
+    for (var i = 0; i < size; ++i) {
+      var element = document.createElement("div");
+      element.classList.add("pillar");
+      element.style.height = `${array[i]}px`;
+      mainDiv.appendChild(element);
+    }
+  };
+
+  useEffect(() => {
+    CreatePillars();
+  });
+
   return (
     <div className="App">
-      <h1 className='heading text-center mt-3 mb-3'>Sorting Visualizer</h1>
-      <div className='mainDiv'>Main Content</div>
+      <h1 className="heading text-center mt-3 mb-3">Sorting Visualizer</h1>
+      <div className="mainDiv text-center"></div>
       <Slider />
       <div className="container-fluid text-center mb-5 buttonGroup">
         <div className="row">

@@ -1,2 +1,3 @@
 - [x] State late update ho rahi h.
 - [ ] Add some cool animation to the Heading.
+- [ ] Try changing the slider color.
