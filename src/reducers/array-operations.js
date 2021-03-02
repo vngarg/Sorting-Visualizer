@@ -1,8 +1,8 @@
 import { Constants } from "../actinos/constants";
 
 const initState = {
-    size: 7,
-    array: [7, 5, 3, 2, 4, 8, 9],
+    size: 16,
+    array: Array.from({length: 16}, () => (Math.floor(Math.random() * 398)) + 1),
 }
 
 export default (state = initState, action) => {

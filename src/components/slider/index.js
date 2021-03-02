@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { UpdateArray } from "../../actinos/array-operations";
 
 export default function Slider() {
-  const [value, onChange] = useState(7);
+  const [value, onChange] = useState(16);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function Slider() {
         className="slider"
         type="range"
         min="4"
-        max="20"
+        max="40"
         value={value}
         onChange={({ target: { value: radius } }) => {
           onChange(radius);
