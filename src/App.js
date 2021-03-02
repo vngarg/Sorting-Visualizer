@@ -1,6 +1,6 @@
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
-import { showArray, UpdateArray } from "./actinos/array-operations";
+import { showArray } from "./actinos/array-operations";
 import Slider from "./components/slider";
 import SelectionSort from "./sorting/selection-sort/selection";
 import InsertionSort from './sorting/insertion-sort/insertion';
@@ -8,17 +8,10 @@ import Bubble from "./sorting/bubble-sort/Bubble";
 
 function App() {
   const dispatch = useDispatch();
-  const array = useSelector((state) => state); // this variable stores the value of global state i.e. contains array & size.
+  const array = useSelector((state) => state.arr.array); // this variable stores the value of global state i.e. contains array.
 
   function show() {
-    dispatch(showArray());
     console.log(array);
-  }
-
-  function update() {
-    const size = Math.floor(Math.random() * 10); // generates a random number as size.
-    dispatch(UpdateArray(size));
-    console.log("Updated array: ", array);
   }
 
   return (
@@ -26,8 +19,6 @@ function App() {
       <input type="button" value="Show Array" onClick={show} />
       <br />
       <Slider />
-      <br />
-      <input type="button" value="Update Array" onClick={update} />
       <br />
       <SelectionSort />
       <br />

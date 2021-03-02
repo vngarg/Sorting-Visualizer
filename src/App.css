@@ -1,0 +1,9 @@
+@import './colors.css';
+body {
+    background-color: var(--background-color);
+}
+
+.btn {
+    background-color: var(--button-color);
+    border-radius: 22px;
+}

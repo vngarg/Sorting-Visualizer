@@ -1,11 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import '../../App.css';
 
 const SelectionSort = () => {
-    // const dispatch = useDispatch();
-    // useEffect(() => {
-
-    // })
     var array = useSelector(state => state.arr.array);
     var size = useSelector(state => state.arr.size);
     
@@ -30,7 +27,7 @@ const SelectionSort = () => {
 
     return (
         <div>
-            <input type='button' onClick={sort} value='Selection Sort' />
+            <input type='button' onClick={sort} className='btn' value='Selection Sort' />
         </div>
     )
 }

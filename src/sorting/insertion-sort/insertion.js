@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import '../../App.css';
 
 const InsertionSort = () => {
     var array = useSelector(state => state.arr.array);
@@ -7,9 +8,9 @@ const InsertionSort = () => {
 
     function insertionSort() {
         for(var i = 1;i<size;++i) {
-            var index, temp;
+            var index, temp, j;
             if(array[i] < array[i-1]) {
-                for(var j = i-1;j>=0;--j) {
+                for(j = i-1;j>=0;--j) {
                     if(array[i] < array[j]) {
                         index = j;
                     } else {
@@ -18,7 +19,7 @@ const InsertionSort = () => {
                 }
 
                 temp = array[i];
-                for(var j = i;j > index;--j)
+                for(j = i;j > index;--j)
                     array[j] = array[j-1];
 
                 array[index] = temp;
@@ -29,7 +30,7 @@ const InsertionSort = () => {
 
     return (
         <div>
-            <input type='button' value='Insertion Sort' onClick={insertionSort} />
+            <input type='button' value='Insertion Sort' className='btn' onClick={insertionSort} />
         </div>
     )
 }

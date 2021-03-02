@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import '../../App.css';
 
 const Bubble = () => {
     var array = useSelector(state => state.arr.array);
@@ -23,7 +24,7 @@ const Bubble = () => {
     
     return (
         <div>
-            <input type='button' value='Bubble Sort' onClick={bubbleSort} />
+            <input type='button' value='Bubble Sort' className='btn' onClick={bubbleSort} />
         </div>
     )
 }

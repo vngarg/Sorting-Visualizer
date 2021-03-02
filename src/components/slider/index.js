@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { UpdateArray } from "../../actinos/array-operations";
 
 export default function Slider() {
-  const [value, onChange] = useState(10);
+  const [value, onChange] = useState(7);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function Slider() {
         value={value}
         onChange={({ target: { value: radius } }) => {
             onChange(radius);
-            dispatch(UpdateArray(Number(value)));
+            dispatch(UpdateArray(Number(radius)));
           }}
       />
       <div className="buble">{value}</div>
