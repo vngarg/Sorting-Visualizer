@@ -1,8 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import '../../App.css';
+import { useDispatch } from "react-redux";
+import { UpdateArray } from '../../actinos/array-operations';
+import UpdatePillars from '../../components/UpdatePillarHeight/Update';
 
 const Bubble = () => {
+    const dispatch = useDispatch();
     var array = useSelector(state => state.arr.array);
     var size = useSelector(state => state.arr.size);
 
@@ -18,8 +22,9 @@ const Bubble = () => {
                     ++swaps;
                 }
             }
+            dispatch(UpdateArray);
         }
-        console.log(array);
+        UpdatePillars(array);
     }
     
     return (

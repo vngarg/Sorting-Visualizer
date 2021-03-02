@@ -1,6 +1,7 @@
 @import '../../colors.css';
 
 .slider-parent {
+  margin-left: 34px !important;
   position: relative;
 }
 

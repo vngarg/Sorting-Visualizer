@@ -1,3 +1,4 @@
 - [x] State late update ho rahi h.
 - [ ] Add some cool animation to the Heading.
 - [ ] Try changing the slider color.
+- [ ] Make a button to ransomize the array i.e. generate a new array of random size.
