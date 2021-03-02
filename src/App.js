@@ -1,30 +1,29 @@
 import "./App.css";
-import { useDispatch, useSelector } from "react-redux";
-import { showArray } from "./actinos/array-operations";
 import Slider from "./components/slider";
 import SelectionSort from "./sorting/selection-sort/selection";
-import InsertionSort from './sorting/insertion-sort/insertion';
+import InsertionSort from "./sorting/insertion-sort/insertion";
 import Bubble from "./sorting/bubble-sort/Bubble";
+import './index.css';
 
 function App() {
-  const dispatch = useDispatch();
-  const array = useSelector((state) => state.arr.array); // this variable stores the value of global state i.e. contains array.
-
-  function show() {
-    console.log(array);
-  }
-
   return (
     <div className="App">
-      <input type="button" value="Show Array" onClick={show} />
-      <br />
+      <h1 className='heading text-center mt-3 mb-3'>Sorting Visualizer</h1>
+      <div className='mainDiv'>Main Content</div>
       <Slider />
-      <br />
-      <SelectionSort />
-      <br />
-      <InsertionSort />
-      <br />
-      <Bubble />
+      <div className="container-fluid text-center mb-5 buttonGroup">
+        <div className="row">
+          <div className="col-lg-4">
+            <SelectionSort />
+          </div>
+          <div className="col-lg-4">
+            <InsertionSort />
+          </div>
+          <div className="col-lg-4">
+            <Bubble />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

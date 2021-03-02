@@ -1,7 +1,14 @@
+@import '../../colors.css';
+
 .slider-parent {
   position: relative;
 }
 
 .buble {
   position: absolute;
+  color: var(--whiteShade);
+}
+
+.slider {
+  width: 40%;
 }

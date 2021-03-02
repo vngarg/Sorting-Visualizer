@@ -15,16 +15,17 @@ export default function Slider() {
   });
 
   return (
-    <div className="slider-parent">
+    <div className="slider-parent m-2">
       <input
+        className="slider"
         type="range"
         min="4"
         max="20"
         value={value}
         onChange={({ target: { value: radius } }) => {
-            onChange(radius);
-            dispatch(UpdateArray(Number(radius)));
-          }}
+          onChange(radius);
+          dispatch(UpdateArray(Number(radius)));
+        }}
       />
       <div className="buble">{value}</div>
     </div>

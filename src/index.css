@@ -1,0 +1,12 @@
+/* This file contains the CSS for the App.js file. It contains the CSS that will only be used in the App.js file. */
+@import './colors.css';
+
+.buttonGroup {
+    position: relative;
+    bottom: 0;
+}
+
+.heading {
+    color: var(--whiteShade);
+    text-shadow: 2px 2px 4px;
+}

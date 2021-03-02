@@ -1,9 +1,18 @@
 @import './colors.css';
+
 body {
     background-color: var(--background-color);
 }
 
 .btn {
-    background-color: var(--button-color);
+    background-color: var(--whiteShade);
     border-radius: 22px;
+    border: none;
+    width: 130px;
+    transition: transform 0.4s;
+    box-shadow: 2px 2px 10px var(--blueShade);
+}
+
+.btn:hover {
+    transform: translate(4px, -4px)
 }
