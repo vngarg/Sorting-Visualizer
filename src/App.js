@@ -7,7 +7,6 @@ import Bubble from "./sorting/bubble-sort/Bubble";
 import "./index.css";
 import { useSelector } from "react-redux";
 import RandomizeArray from "./components/RandomizeArray/RandomizeArray";
-// import audio from './assets/audio/Panghat - Roohi.mp3';
 
 function App() {
   var size = useSelector((state) => state.arr.size);
@@ -29,12 +28,6 @@ function App() {
   };
 
   useEffect(() => {
-    // var sound = document.createElement('audio');
-    // sound.src = audio;
-    // document.body.appendChild(sound);
-
-    // sound.play();
-
     CreatePillars();
   });
 

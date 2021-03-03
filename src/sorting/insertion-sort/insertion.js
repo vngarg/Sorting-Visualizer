@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import '../../App.css';
 import { useDispatch } from "react-redux";
-import { UpdateArray } from '../../actinos/array-operations';
+import { UpdateArray, UpdateSortingState } from '../../actinos/array-operations';
 import UpdatePillars from '../../components/UpdatePillarHeight/Update';
 import sleep from '../../components/Sleep/sleep';
 
@@ -10,8 +10,10 @@ const InsertionSort = () => {
     const dispatch = useDispatch();
     var array = useSelector(state => state.arr.array);
     var size = useSelector(state => state.arr.size);
+    var sorting = useSelector(state => state.arr.sorting);
 
     async function insertionSort() {
+        dispatch(UpdateSortingState(false));
         for(var i = 1;i<size;++i) {
             var index, temp, j;
             if(array[i] < array[i-1]) {
@@ -33,11 +35,12 @@ const InsertionSort = () => {
                 UpdatePillars(array);
             }
         }
+        dispatch(UpdateSortingState(true));
     }
 
     return (
         <div>
-            <input type='button' value='Insertion Sort' className='btn' onClick={insertionSort} />
+            <input  disabled={sorting} type='button' value='Insertion Sort' className='btn' onClick={insertionSort} />
         </div>
     )
 }

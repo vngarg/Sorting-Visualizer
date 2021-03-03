@@ -1,12 +1,12 @@
 import { Constants } from "./constants";
 
-export const showArray = () => {
-    return dispatch => {
-        dispatch({
-            type: Constants.GET_ARRAY
-        })
-    }
-}
+// export const showArray = () => {
+//     return dispatch => {
+//         dispatch({
+//             type: Constants.GET_ARRAY
+//         })
+//     }
+// }
 
 export const UpdateArray = (size) => {
     // generating a random array of the new size. Values of the array are from 0 to (size*50)
@@ -18,6 +18,18 @@ export const UpdateArray = (size) => {
             payload: {
                 size,
                 array
+            }
+        })
+    }
+}
+
+export const UpdateSortingState = (sorting) => {
+    console.log('Sorting in Actions is: ', sorting)
+    return dispatch => {
+        dispatch({
+            type: Constants.UPDATE_SORTING_STATE,
+            payload: {
+                sorting
             }
         })
     }

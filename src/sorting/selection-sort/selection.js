@@ -1,8 +1,7 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
 import '../../App.css';
-import { useDispatch } from "react-redux";
-import { UpdateArray } from '../../actinos/array-operations';
+import { useDispatch, useSelector } from "react-redux";
+import { UpdateArray, UpdateSortingState } from '../../actinos/array-operations';
 import UpdatePillars from '../../components/UpdatePillarHeight/Update';
 import sleep from '../../components/Sleep/sleep';
 
@@ -10,6 +9,7 @@ const SelectionSort = () => {
     const dispatch = useDispatch();
     var array = useSelector(state => state.arr.array);
     var size = useSelector(state => state.arr.size);
+    var sorting = useSelector(state => state.arr.sorting);
     
     function findMin(start) {
         var min = start;
@@ -21,6 +21,7 @@ const SelectionSort = () => {
     }
 
     async function sort() {
+        dispatch(UpdateSortingState(false));
         for(var i=0;i<size;++i) {
             var minIndex = findMin(i);
             var temp = array[minIndex];
@@ -30,11 +31,12 @@ const SelectionSort = () => {
             await sleep();
             UpdatePillars(array);
         }
+        dispatch(UpdateSortingState(true));
     }
 
     return (
         <div>
-            <input type='button' onClick={sort} className='btn' value='Selection Sort' />
+            <input disabled={sorting} type='button' onClick={sort} className='btn' value='Selection Sort' />
         </div>
     )
 }
