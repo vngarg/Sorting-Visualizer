@@ -21,7 +21,6 @@ export default (state = initState, action) => {
             }
             break;
         case Constants.UPDATE_SORTING_STATE: 
-        console.log('In')
             state = {
                 ...state, 
                 sorting: !action.payload.sorting,

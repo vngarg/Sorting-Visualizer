@@ -24,7 +24,6 @@ export const UpdateArray = (size) => {
 }
 
 export const UpdateSortingState = (sorting) => {
-    console.log('Sorting in Actions is: ', sorting)
     return dispatch => {
         dispatch({
             type: Constants.UPDATE_SORTING_STATE,

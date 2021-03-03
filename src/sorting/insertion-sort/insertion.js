@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { UpdateArray, UpdateSortingState } from '../../actinos/array-operations';
 import UpdatePillars from '../../components/UpdatePillarHeight/Update';
 import sleep from '../../components/Sleep/sleep';
+import {ChangeColor, MakeAllWhite} from '../../components/ChangePillarColors/ChangePillarColors';
 
 const InsertionSort = () => {
     const dispatch = useDispatch();
@@ -34,7 +35,9 @@ const InsertionSort = () => {
                 await sleep();
                 UpdatePillars(array);
             }
+            ChangeColor(i)
         }
+        MakeAllWhite();
         dispatch(UpdateSortingState(true));
     }
 

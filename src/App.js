@@ -15,10 +15,8 @@ function App() {
   const CreatePillars = () => {
     var mainDiv = document.querySelector(".mainDiv");
 
-    // Removing the previous array elements.
     while (mainDiv.firstChild) mainDiv.firstChild.remove();
 
-    // adding array elements with the current size.
     for (var i = 0; i < size; ++i) {
       var element = document.createElement("div");
       element.classList.add("pillar");
