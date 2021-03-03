@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { UpdateArray, UpdateSortingState } from '../../actinos/array-operations';
 import UpdatePillars from '../../components/UpdatePillarHeight/Update';
 import sleep from '../../components/Sleep/sleep';
-import {ChangeColor, MakeAllWhite} from '../../components/ChangePillarColors/ChangePillarColors';
+import {ChangeColor, MakeAllWhite, FinalCheck} from '../../components/ChangePillarColors/ChangePillarColors';
 
 const Bubble = () => {
     const dispatch = useDispatch();
@@ -18,19 +18,21 @@ const Bubble = () => {
         var swaps = -1;
         while(swaps !== 0) {
             swaps = 0;
-            for(var i = 0;i<size-1;++i) {
-                if(array[i+1] < array[i]) {
+            for(var i = size-1;i>=0;--i) {
+                if(array[i] < array[i-1]) {
                     ChangeColor(i);
-                    var temp = array[i+1];
-                    array[i+1] = array[i];
+                    var temp = array[i-1];
+                    array[i-1] = array[i];
                     array[i] = temp;
                     ++swaps;
                 }
             }
             dispatch(UpdateArray);
-            await sleep();
+            await sleep(400);
             UpdatePillars(array);
         }
+        MakeAllWhite();
+        await FinalCheck();
         MakeAllWhite();
         dispatch(UpdateSortingState(true));
     }

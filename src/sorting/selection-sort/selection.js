@@ -4,14 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { UpdateArray, UpdateSortingState } from '../../actinos/array-operations';
 import UpdatePillars from '../../components/UpdatePillarHeight/Update';
 import sleep from '../../components/Sleep/sleep';
-import {ChangeColor, MakeAllWhite} from '../../components/ChangePillarColors/ChangePillarColors';
+import {ChangeColor, MakeAllWhite, FinalCheck} from '../../components/ChangePillarColors/ChangePillarColors';
 
 const SelectionSort = () => {
     const dispatch = useDispatch();
     var array = useSelector(state => state.arr.array);
     var size = useSelector(state => state.arr.size);
     var sorting = useSelector(state => state.arr.sorting);
-    
+
     function findMin(start) {
         var min = start;
         for(var i=start;i<size;++i) {
@@ -30,9 +30,11 @@ const SelectionSort = () => {
             array[minIndex] = array[i];
             array[i] = temp;
             dispatch(UpdateArray);
-            await sleep();
+            await sleep(400);
             UpdatePillars(array);
         }
+        MakeAllWhite();
+        await FinalCheck();
         MakeAllWhite();
         dispatch(UpdateSortingState(true));
     }

@@ -4,6 +4,11 @@
 - [x] Make a button to randomize the array i.e. generate a new array of random size.
 - [x] Block all buttons while one algo is working. 
 - [x] Change title of the App & Add logo of S.G.Codes
-- [ ] Add final check so that at the end saare pillars ka color one time change ho.
-- [ ] Bubble sort last s sort kar rahi h, usse starting s sort p daalna h. 
+- [x] Add final check so that at the end saare pillars ka color one time change ho.
+- [x] Bubble sort last s sort kar rahi h, usse starting s sort p daalna h. 
 - [ ] Add all sortings.
+- [x] Make sleep function to take time as parameter.
+- [ ] Merge Sort
+- [ ] Quick Sort
+- [ ] Heap Sort
+- [ ] Count Sort
