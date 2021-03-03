@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux';
 import '../../App.css';
 import { useDispatch } from "react-redux";
 import { UpdateArray } from '../../actinos/array-operations';
-import UpdatePillars from '../../components/UpdatePillarHeight/Update'
+import UpdatePillars from '../../components/UpdatePillarHeight/Update';
+import sleep from '../../components/Sleep/sleep';
 
 const SelectionSort = () => {
     const dispatch = useDispatch();
@@ -19,16 +20,16 @@ const SelectionSort = () => {
         return min;
     }
 
-    function sort() {
+    async function sort() {
         for(var i=0;i<size;++i) {
             var minIndex = findMin(i);
             var temp = array[minIndex];
             array[minIndex] = array[i];
             array[i] = temp;
             dispatch(UpdateArray);
+            await sleep();
+            UpdatePillars(array);
         }
-        
-        UpdatePillars(array);
     }
 
     return (

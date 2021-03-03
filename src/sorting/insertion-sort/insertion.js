@@ -4,13 +4,14 @@ import '../../App.css';
 import { useDispatch } from "react-redux";
 import { UpdateArray } from '../../actinos/array-operations';
 import UpdatePillars from '../../components/UpdatePillarHeight/Update';
+import sleep from '../../components/Sleep/sleep';
 
 const InsertionSort = () => {
     const dispatch = useDispatch();
     var array = useSelector(state => state.arr.array);
     var size = useSelector(state => state.arr.size);
 
-    function insertionSort() {
+    async function insertionSort() {
         for(var i = 1;i<size;++i) {
             var index, temp, j;
             if(array[i] < array[i-1]) {
@@ -28,9 +29,10 @@ const InsertionSort = () => {
 
                 array[index] = temp;
                 dispatch(UpdateArray);
+                await sleep();
+                UpdatePillars(array);
             }
         }
-        UpdatePillars(array);
     }
 
     return (

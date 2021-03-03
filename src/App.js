@@ -6,6 +6,8 @@ import InsertionSort from "./sorting/insertion-sort/insertion";
 import Bubble from "./sorting/bubble-sort/Bubble";
 import "./index.css";
 import { useSelector } from "react-redux";
+import RandomizeArray from "./components/RandomizeArray/RandomizeArray";
+// import audio from './assets/audio/Panghat - Roohi.mp3';
 
 function App() {
   var size = useSelector((state) => state.arr.size);
@@ -27,6 +29,12 @@ function App() {
   };
 
   useEffect(() => {
+    // var sound = document.createElement('audio');
+    // sound.src = audio;
+    // document.body.appendChild(sound);
+
+    // sound.play();
+
     CreatePillars();
   });
 
@@ -34,8 +42,15 @@ function App() {
     <div className="App">
       <h1 className="heading text-center mt-3 mb-3">Sorting Visualizer</h1>
       <div className="mainDiv text-center"></div>
-      <Slider />
-      <div className="container-fluid text-center mb-5 buttonGroup">
+      <div className="row m-0 mt-4">
+        <div className="col-lg-5">
+          <Slider />
+        </div>
+        <div className="col-lg-7">
+          <RandomizeArray size={size} />
+        </div>
+      </div>
+      <div className="container-fluid text-center mt-4 buttonGroup">
         <div className="row">
           <div className="col-lg-4">
             <SelectionSort />

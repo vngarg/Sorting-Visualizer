@@ -4,13 +4,14 @@ import '../../App.css';
 import { useDispatch } from "react-redux";
 import { UpdateArray } from '../../actinos/array-operations';
 import UpdatePillars from '../../components/UpdatePillarHeight/Update';
+import sleep from '../../components/Sleep/sleep';
 
 const Bubble = () => {
     const dispatch = useDispatch();
     var array = useSelector(state => state.arr.array);
     var size = useSelector(state => state.arr.size);
 
-    function bubbleSort() {
+    async function bubbleSort() {
         var swaps = -1;
         while(swaps !== 0) {
             swaps = 0;
@@ -23,8 +24,9 @@ const Bubble = () => {
                 }
             }
             dispatch(UpdateArray);
+            await sleep();
+            UpdatePillars(array);
         }
-        UpdatePillars(array);
     }
     
     return (
