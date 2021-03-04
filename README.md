@@ -1,4 +1,4 @@
-(https://img.shields.io/badge/ReactJs-React&Redux-green)
+![React & Redux](https://img.shields.io/badge/ReactJs-React&Redux-green)
 ![star](https://img.shields.io/github/stars/vngarg/Sorting-Visualizer) 
 ![fork](https://img.shields.io/github/forks/vngarg/Sorting-Visualizer)
 ![dev](https://img.shields.io/badge/Developed%20by%20-Shlok%20Garg-orange)
@@ -10,7 +10,7 @@ You can select the array size from the slider & a random array will be generated
 
 ![Sorting Visualizer](assets/Project-Image.png) 
 
-#### Project Link
+### Project Link
 https://vngarg.github.io/Sorting-Visualizer/
 
 ### Current Features
