@@ -1,4 +1,4 @@
-import { Constants } from "../actinos/constants";
+import { Constants } from "../actions/constants";
 
 const initState = {
     size: 16,

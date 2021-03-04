@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import '../../App.css';
 import { useDispatch } from "react-redux";
-import { UpdateArray, UpdateSortingState } from '../../actinos/array-operations';
+import { UpdateArray, UpdateSortingState } from '../../actions/array-operations';
 import UpdatePillars from '../../components/UpdatePillarHeight/Update';
 import sleep from '../../components/Sleep/sleep';
 import {ChangeColor, MakeAllWhite, FinalCheck} from '../../components/ChangePillarColors/ChangePillarColors';
@@ -45,7 +45,7 @@ const InsertionSort = () => {
 
     return (
         <div>
-            <input  disabled={sorting} type='button' value='Insertion Sort' className='btn' onClick={insertionSort} />
+            <input disabled={sorting} type='button' value='Insertion Sort' className='btn' onClick={insertionSort} />
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { UpdateArray } from '../../actinos/array-operations';
+import { UpdateArray } from '../../actions/array-operations';
 
 const RandomizeArray = ({size}) => {
     var dispatch = useDispatch();

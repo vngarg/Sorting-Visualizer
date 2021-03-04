@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
 import { useDispatch } from "react-redux";
-import { UpdateArray } from "../../actinos/array-operations";
+import { UpdateArray } from "../../actions/array-operations";
 
 export default function Slider() {
   const [value, onChange] = useState(16);

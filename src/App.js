@@ -7,6 +7,7 @@ import Bubble from "./sorting/bubble-sort/Bubble";
 import "./index.css";
 import { useSelector } from "react-redux";
 import RandomizeArray from "./components/RandomizeArray/RandomizeArray";
+import MergeSort from "./sorting/Merge Sort/MergeSort";
 
 function App() {
   var size = useSelector((state) => state.arr.size);
@@ -54,6 +55,7 @@ function App() {
           </div>
         </div>
       </div>
+      {/* <MergeSort /> */}
     </div>
   );
 }
